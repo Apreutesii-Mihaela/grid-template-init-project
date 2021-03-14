@@ -1,37 +1,93 @@
 .about {
-    background-color: #e5e5e5;
-    padding-top: 100px;
+    color: $color-gray;
+    letter-spacing: 0.055em;
+    background-color: $color-gray-light;
+
+    @include lg-min {
+        padding-top: $gap * 5;
+        padding-bottom: $gap * 5;
+    }
+    @include lg-md {
+        padding-top: $gap * 4;
+        padding-bottom: $gap * 4;
+    }
+    @include md {
+        padding-top: $gap * 3;
+        padding-bottom: $gap * 3;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
 
     &__container {
         display: grid;
-        grid-template-columns: 1fr 271px;
-        gap: 100px;
-        max-width: 1340px;
-        margin: auto;
-        padding: 0 20px 0 20px;
 
-        &__content {
-            font-family: $font-main;
-            color: $color-gray;
-            font-size: 1.125rem;
-            letter-spacing: 0.055em;
-            padding-right: 100px;
-            font-weight: 400;
+        @extend %container;
+        @include lg-min {
+            gap: $gap * 5;
+            grid-template-columns: 1fr 271px;
+        }
+        @include lg-md {
+            gap: $gap * 2;
+            grid-template-columns: 1fr 271px;
+        }
+        @include md-sm {
+            gap: $gap;
+            grid-template-columns: 1fr 236px;
+        }
+        @include sm {
+            gap: $gap;
+            grid-template-columns: 1fr;
         }
     }
-    &__image {
-        border-left: 1px solid #707070;
-        max-height: 480px;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding-left: 10px;
+
+    &__content {
+        p {
+            @include lg-min {
+                font-size: 1.125rem;
+            }
+
+            &:first-of-type {
+                position: relative;
+                margin-top: -5px;
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    width: 2px;
+                    height: $gap * 10;
+                    content: "";
+                    background-color: rgba($color-gray, 0.1);
+
+                    @include lg-min {
+                        right: -50px;
+                    }
+                    @include lg-md {
+                        right: -$gap;
+                    }
+                    @include md-sm {
+                        right: -$gap / 2;
+                    }
+                    @include sm {
+                        display: none;
+                    }
+                }
+            }
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
     }
-}
-h2 {
-    font-family: $font-header;
-    color: $color-primary;
-    font-size: 2.5rem;
-    letter-spacing: 0.1em;
-    line-height: 1.2em;
+
+    &__image {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        img {
+            max-width: 100%;
+            max-height: 480px;
+        }
+    }
 }

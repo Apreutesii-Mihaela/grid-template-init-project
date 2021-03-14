@@ -2,7 +2,8 @@ node_modules/
 # IntellijIdea files
 .idea/
 .DS_Store
-
+.vscode/
+log/
 
 
 # Created by https://www.gitignore.io/api/node,bower,osx,linux,windows,dropbox,sass,less,grunt,sublimetext,code
