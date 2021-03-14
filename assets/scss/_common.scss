@@ -30,7 +30,7 @@ h2 {
   line-height: 1.2em;
   @include lg-min {
     margin-top: 0;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
     font-size: 2.5rem;
   }
   @include lg-md {
@@ -98,20 +98,6 @@ a {
     }
     @include sm {
       width: 100%;
-    }
-  }
-
-  &--active {
-    background-color: rgba($color-light, 0.1);
-    transition: border 0.5s;
-    transition: background-color 0.5s;
-    &:hover,
-    :focus {
-      border: 2px solid $color-light;
-    }
-    &:hover,
-    :focus {
-      background-color: $color-accent;
     }
   }
 }

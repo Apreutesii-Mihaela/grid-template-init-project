@@ -4,6 +4,9 @@
     transition: background-color 0.5s;
     background-color: lighten($color: $color-gray-light, $amount: 5%);
 
+    h2 {
+        margin-top: 0;
+    }
     &:hover {
         background-color: darken($color: $color-gray-light, $amount: 5%);
 
