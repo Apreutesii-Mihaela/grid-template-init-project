@@ -90,6 +90,7 @@
                 background-color: rgba(255, 255, 255, 0.1);
                 transition: border 0.5s;
                 transition: background-color 0.5s;
+                transition: border-bottom-color 0s;
                 &:hover,
                 :focus {
                     border: 2px solid $color-light;
@@ -97,6 +98,10 @@
                 &:hover,
                 :focus {
                     background-color: $color-accent;
+                }
+                &:hover,
+                :focus {
+                    border-bottom-color: none;
                 }
             }
         }

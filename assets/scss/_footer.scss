@@ -1,0 +1,16 @@
+.footer {
+    display: block;
+    text-align: center;
+    &__container {
+        background-color: $color-primary;
+        @extend %container;
+    }
+    &-item-social {
+        color: darkblue;
+        background-color: darkcyan;
+    }
+    &-item-description {
+        color: $color-gray-light;
+        background-color: black;
+    }
+}
