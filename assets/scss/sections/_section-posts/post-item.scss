@@ -1,33 +1,29 @@
 .post-item {
     display: block;
     text-align: center;
-    transition: background-color 0.5s;
-    background-color: lighten($color: $color-gray-light, $amount: 5%);
-
-    h2 {
-        margin-top: 0;
-    }
-    &:hover {
-        background-color: darken($color: $color-gray-light, $amount: 5%);
-
-        .post-item__image img {
-            transform: scale(1.1);
-        }
-
-        h3 {
-            color: $color-primary;
-        }
-
-        p {
-            color: $color-primary;
-        }
-    }
 
     &__link {
         display: grid;
         grid-template-rows: 300px 1fr;
         height: 100%;
         overflow: hidden;
+        &:hover,
+        :focus {
+            .post-item__caption {
+                background-color: darken($color: $color-posts, $amount: 10%);
+            }
+            .post-item__img img {
+                transform: scale(1.1);
+            }
+
+            h3 {
+                color: $color-primary;
+            }
+
+            p {
+                color: $color-primary;
+            }
+        }
     }
     &__img {
         display: flex;
@@ -48,6 +44,7 @@
         padding: $gap;
         background-color: $color-posts;
         color: $color-gray;
+        transition: background-color 0.5s;
 
         p {
             text-align: center;
