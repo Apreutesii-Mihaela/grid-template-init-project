@@ -2,32 +2,26 @@
     background-color: $color-primary;
     padding: 30px 0;
     @include sm {
-        padding: 20px 0;
+        padding: $gap 0;
     }
 
     &__container {
-        max-width: 1340px;
-        margin: auto;
-        padding-left: $gap;
-        padding-right: $gap;
-
+        @extend %conainer;
         @include lg-min {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 60px;
             gap: $gap;
         }
 
         @include lg-md {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 60px;
             gap: $gap;
         }
         @include md-sm {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 60px 60px;
+
             gap: $gap;
             .form-item:first-of-type {
                 grid-column: 1 / 3;
@@ -35,7 +29,6 @@
         }
         @include sm {
             grid-template-columns: 1fr;
-            grid-auto-rows: 60px 60px 60px;
         }
     }
 
@@ -52,10 +45,10 @@
 
         @include sm {
             &:nth-child(1) {
-                margin-bottom: 20px;
+                margin-bottom: $gap;
             }
             &:nth-child(2) {
-                margin-bottom: 20px;
+                margin-bottom: $gap;
             }
         }
         &__input {
